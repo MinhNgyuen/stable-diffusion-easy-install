@@ -1,0 +1,21 @@
+name: Update Release Asset
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-release:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Update Release Asset
+      uses: svenstaro/upload-release-action@v2
+      with:
+        file: stable-diffusion-web-ui.bat
+        asset_name: stable-diffusion-web-ui.bat
+        tag: latest
+        overwrite: true
