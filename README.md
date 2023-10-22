@@ -21,4 +21,9 @@ This repository provides a hassle-free method to install the Stable Diffusion We
 ## Usage
 
 The installation script doubles as a launcher for Stable Diffusion Web UI. After the installation is complete, you can run the script again to launch the application anytime.
+
 Stable Diffusion Web UI will be installed to the following directory: C:\Users\%USERNAME%\Documents\GitHub\stable-diffusion-webui
+
+## Help
+
+If you have any questions or need help, join our Discord server and we'll try to assist you!
