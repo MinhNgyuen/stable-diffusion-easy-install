@@ -1,8 +1,24 @@
 # stable-diffusion-easy-install
 
-The easiest way to install stable diffusion web ui on your windows nvidia gpu computer
+Easily install and run Stable Diffusion Web UI on Windows computers with an NVIDIA GPU.
 
-<a href="[https://raw.githubusercontent.com/MinhNgyuen/stable-diffusion-easy-install/main/stable-diffusion-web-ui.bat](https://github.com/MinhNgyuen/stable-diffusion-easy-install/raw/main/stable-diffusion-web-ui.bat)" download="stable-diffusion-web-ui.bat">Download File 1</a>
-<a href="https://raw.githubusercontent.com/MinhNgyuen/stable-diffusion-easy-install/main/stable-diffusion-web-ui.bat" download="stable-diffusion-web-ui.bat">Download File 2</a>
-[Download stable-diffusion-web-ui-1.bat](https://github.com/MinhNgyuen/stable-diffusion-easy-install/raw/main/stable-diffusion-web-ui.bat)
-[Download stable-diffusion-web-ui-2.bat](https://raw.githubusercontent.com/MinhNgyuen/stable-diffusion-easy-install/main/stable-diffusion-web-ui.bat)
+## Prerequisites
+
+- Windows OS
+- NVIDIA GPU with a minimum of 4GB VRAM
+
+## Installation
+
+This repository provides a hassle-free method to install the Stable Diffusion Web UI on your machine. Just follow the steps below:
+
+1. **Download the Installer**:
+
+   - [Click here to download the .bat file](https://github.com/MinhNgyuen/stable-diffusion-easy-install/releases/download/latest/stable-diffusion-web-ui.bat) for the latest version of the installation script.
+
+2. **Run the Installer**:
+   - Once the .bat file is downloaded, double-click on it to begin the installation of Stable Diffusion Web UI.
+
+## Usage
+
+The installation script doubles as a launcher for Stable Diffusion Web UI. After the installation is complete, you can run the script again to launch the application anytime.
+Stable Diffusion Web UI will be installed to the following directory: C:\Users\%USERNAME%\Documents\GitHub\stable-diffusion-webui
