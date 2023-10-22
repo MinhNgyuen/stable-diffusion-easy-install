@@ -1,7 +1,7 @@
 @echo off
 setlocal enabledelayedexpansion
-set "TARGET_DIR=C:\Users\%USERNAME%\Documents\GitHub\stable-diffusion-webui"
 
+set "TARGET_DIR=C:\Users\%USERNAME%\Documents\GitHub\stable-diffusion-webui"
 if not exist "%TARGET_DIR%" (
     echo Installing stable diffusion for the first time. 
 ) else (
@@ -10,9 +10,9 @@ if not exist "%TARGET_DIR%" (
 
 :promptUserGPU
 echo(
-powershell -Command "& {Write-Host '********************************************************************************' -ForegroundColor Green}"
-powershell -Command "& {Write-Host '****** Do you have an Nvidia GPU? (4GB of VRAM recommended minimum) (Y/N) ******' -ForegroundColor Green}"
-powershell -Command "& {Write-Host '********************************************************************************' -ForegroundColor Green}"
+powershell -ExecutionPolicy Bypass -Command "& {Write-Host '********************************************************************************' -ForegroundColor Green}"
+powershell -ExecutionPolicy Bypass -Command "& {Write-Host '****** Do you have an Nvidia GPU? (4GB of VRAM recommended minimum) (Y/N) ******' -ForegroundColor Green}"
+powershell -ExecutionPolicy Bypass -Command "& {Write-Host '********************************************************************************' -ForegroundColor Green}"
 echo(
 set /p userResponse=
 echo.
@@ -35,9 +35,9 @@ echo.
 :promptUserTime
 echo Stable diffusion requires downloading large files and can take 1-3+ hours depending on your internet speed.
 echo(
-powershell -Command "& {Write-Host '****************************************************************************************************' -ForegroundColor Green}"
-powershell -Command "& {Write-Host '****** Do you have 10GB of space on your hard drive and 1+ hours for this installation? (Y/N) ******' -ForegroundColor Green}"
-powershell -Command "& {Write-Host '****************************************************************************************************' -ForegroundColor Green}"
+powershell -ExecutionPolicy Bypass -Command "& {Write-Host '****************************************************************************************************' -ForegroundColor Green}"
+powershell -ExecutionPolicy Bypass -Command "& {Write-Host '****** Do you have 10GB of space on your hard drive and 1+ hours for this installation? (Y/N) ******' -ForegroundColor Green}"
+powershell -ExecutionPolicy Bypass -Command "& {Write-Host '****************************************************************************************************' -ForegroundColor Green}"
 echo(
 set /p userResponse=
 echo.
@@ -69,18 +69,18 @@ if %errorlevel% NEQ 0 (
     echo Installing Python...
     echo.
     echo(
-    powershell -Command "& {Write-Host '*********************************************' -ForegroundColor Green}"
-    powershell -Command "& {Write-Host '****** Allow windows to install python ******' -ForegroundColor Green}"
-    powershell -Command "& {Write-Host '*********************************************' -ForegroundColor Green}"
+    powershell -ExecutionPolicy Bypass -Command "& {Write-Host '*********************************************' -ForegroundColor Green}"
+    powershell -ExecutionPolicy Bypass -Command "& {Write-Host '****** Allow windows to install python ******' -ForegroundColor Green}"
+    powershell -ExecutionPolicy Bypass -Command "& {Write-Host '*********************************************' -ForegroundColor Green}"
     echo.
-    powershell -Command "& {Write-Host '******************************************************' -ForegroundColor Green}"
-    powershell -Command "& {Write-Host '****** Select -> Add Python 3.10 to PATH        ******' -ForegroundColor Green}"
-    powershell -Command "& {Write-Host '****** Select -> Install now                    ******' -ForegroundColor Green}"
-    powershell -Command "& {Write-Host '******************************************************' -ForegroundColor Green}"
-    powershell -Command "& {Write-Host '****** Once Python installation is complete     ******' -ForegroundColor Green}"
-    powershell -Command "& {Write-Host '****** Close the installation window            ******' -ForegroundColor Green}"
-    powershell -Command "& {Write-Host '****** And the installation script will proceed ******' -ForegroundColor Green}"
-    powershell -Command "& {Write-Host '******************************************************' -ForegroundColor Green}"
+    powershell -ExecutionPolicy Bypass -Command "& {Write-Host '******************************************************' -ForegroundColor Green}"
+    powershell -ExecutionPolicy Bypass -Command "& {Write-Host '****** Select -> Add Python 3.10 to PATH        ******' -ForegroundColor Green}"
+    powershell -ExecutionPolicy Bypass -Command "& {Write-Host '****** Select -> Install now                    ******' -ForegroundColor Green}"
+    powershell -ExecutionPolicy Bypass -Command "& {Write-Host '******************************************************' -ForegroundColor Green}"
+    powershell -ExecutionPolicy Bypass -Command "& {Write-Host '****** Once Python installation is complete     ******' -ForegroundColor Green}"
+    powershell -ExecutionPolicy Bypass -Command "& {Write-Host '****** Close the installation window            ******' -ForegroundColor Green}"
+    powershell -ExecutionPolicy Bypass -Command "& {Write-Host '****** And the installation script will proceed ******' -ForegroundColor Green}"
+    powershell -ExecutionPolicy Bypass -Command "& {Write-Host '******************************************************' -ForegroundColor Green}"
     echo(
     echo.
     
@@ -101,10 +101,10 @@ if %errorlevel% NEQ 0 (
     curl -L -o Git-2.42.0-64-bit.exe https://github.com/git-for-windows/git/releases/download/v2.42.0.windows.1/Git-2.42.0-64-bit.exe
     echo Installing Git...
     echo(
-    powershell -Command "& {Write-Host '******************************************' -ForegroundColor Green}"
-    powershell -Command "& {Write-Host '****** Allow windows to install git ******' -ForegroundColor Green}"
-    powershell -Command "& {Write-Host '****** Please wait for 5 minutes    ******' -ForegroundColor Green}"
-    powershell -Command "& {Write-Host '******************************************' -ForegroundColor Green}"
+    powershell -ExecutionPolicy Bypass -Command "& {Write-Host '******************************************' -ForegroundColor Green}"
+    powershell -ExecutionPolicy Bypass -Command "& {Write-Host '****** Allow windows to install git ******' -ForegroundColor Green}"
+    powershell -ExecutionPolicy Bypass -Command "& {Write-Host '****** Please wait for 5 minutes    ******' -ForegroundColor Green}"
+    powershell -ExecutionPolicy Bypass -Command "& {Write-Host '******************************************' -ForegroundColor Green}"
     echo(
     start /wait Git-2.42.0-64-bit.exe /VERYSILENT InstallAllUsers=1 PrependPath=1
     del Git-2.42.0-64-bit.exe
@@ -116,21 +116,21 @@ if %errorlevel% NEQ 0 (
 :: Check the variables and print messages
 if !gitJustInstalled! == true (
     echo(
-    powershell -Command "& {Write-Host '****************************************************' -ForegroundColor Green}"
-    powershell -Command "& {Write-Host '**************** Git was installed *****************' -ForegroundColor Green}"
-    powershell -Command "& {Write-Host '************ The script will now restart ***********' -ForegroundColor Green}"
-    powershell -Command "& {Write-Host '****** Rerun the script to be able to use git ******' -ForegroundColor Green}"
-    powershell -Command "& {Write-Host '****************************************************' -ForegroundColor Green}"
+    powershell -ExecutionPolicy Bypass -Command "& {Write-Host '****************************************************' -ForegroundColor Green}"
+    powershell -ExecutionPolicy Bypass -Command "& {Write-Host '**************** Git was installed *****************' -ForegroundColor Green}"
+    powershell -ExecutionPolicy Bypass -Command "& {Write-Host '************ The script will now restart ***********' -ForegroundColor Green}"
+    powershell -ExecutionPolicy Bypass -Command "& {Write-Host '****** Rerun the script to be able to use git ******' -ForegroundColor Green}"
+    powershell -ExecutionPolicy Bypass -Command "& {Write-Host '****************************************************' -ForegroundColor Green}"
     echo(
     pause
     exit /b
 ) else if !pythonJustInstalled! == true (
     echo(
-    powershell -Command "& {Write-Host '*******************************************************' -ForegroundColor Green}"
-    powershell -Command "& {Write-Host '**************** Python was installed *****************' -ForegroundColor Green}"
-    powershell -Command "& {Write-Host '************* The script will now restart *************' -ForegroundColor Green}"
-    powershell -Command "& {Write-Host '****** Rerun the script to be able to use Python ******' -ForegroundColor Green}"
-    powershell -Command "& {Write-Host '*******************************************************' -ForegroundColor Green}"
+    powershell -ExecutionPolicy Bypass -Command "& {Write-Host '*******************************************************' -ForegroundColor Green}"
+    powershell -ExecutionPolicy Bypass -Command "& {Write-Host '**************** Python was installed *****************' -ForegroundColor Green}"
+    powershell -ExecutionPolicy Bypass -Command "& {Write-Host '************* The script will now restart *************' -ForegroundColor Green}"
+    powershell -ExecutionPolicy Bypass -Command "& {Write-Host '****** Rerun the script to be able to use Python ******' -ForegroundColor Green}"
+    powershell -ExecutionPolicy Bypass -Command "& {Write-Host '*******************************************************' -ForegroundColor Green}"
     echo(
     pause
     exit /b
@@ -203,14 +203,14 @@ IF "%allFilesExist%"=="true" (
     :: Prompt the user if models are not found
     :ModelDownloadPrompt
     echo(
-    powershell -Command "& {Write-Host '*********************************************************************************' -ForegroundColor Green}"
-    powershell -Command "& {Write-Host '****** Which model would you like to download?                             ******' -ForegroundColor Green}"
-    powershell -Command "& {Write-Host '****** 1. Stable Diffusion (recommended for Nvidia GPU with 4+ GB VRAM)    ******' -ForegroundColor Green}"
-    powershell -Command "& {Write-Host '****** 2. Stable Diffusion XL (recommended for Nvidia GPU with 8+ GB VRAM) ******' -ForegroundColor Green}"
-    powershell -Command "& {Write-Host '****** 3. Both                                                             ******' -ForegroundColor Green}"
-    powershell -Command "& {Write-Host '****** 4. None. (you can download them yourself later)                     ******' -ForegroundColor Green}"
-    powershell -Command "& {Write-Host '****** Enter your choice (1/2/3/4):                                        ******' -ForegroundColor Green}"
-    powershell -Command "& {Write-Host '*********************************************************************************' -ForegroundColor Green}"
+    powershell -ExecutionPolicy Bypass -Command "& {Write-Host '*********************************************************************************' -ForegroundColor Green}"
+    powershell -ExecutionPolicy Bypass -Command "& {Write-Host '****** Which model would you like to download?                             ******' -ForegroundColor Green}"
+    powershell -ExecutionPolicy Bypass -Command "& {Write-Host '****** 1. Stable Diffusion (recommended for Nvidia GPU with 4+ GB VRAM)    ******' -ForegroundColor Green}"
+    powershell -ExecutionPolicy Bypass -Command "& {Write-Host '****** 2. Stable Diffusion XL (recommended for Nvidia GPU with 8+ GB VRAM) ******' -ForegroundColor Green}"
+    powershell -ExecutionPolicy Bypass -Command "& {Write-Host '****** 3. Both                                                             ******' -ForegroundColor Green}"
+    powershell -ExecutionPolicy Bypass -Command "& {Write-Host '****** 4. None. (you can download them yourself later)                     ******' -ForegroundColor Green}"
+    powershell -ExecutionPolicy Bypass -Command "& {Write-Host '****** Enter your choice (1/2/3/4):                                        ******' -ForegroundColor Green}"
+    powershell -ExecutionPolicy Bypass -Command "& {Write-Host '*********************************************************************************' -ForegroundColor Green}"
     echo(
     set /p choice=Enter your choice 1/2/3/4)
     echo.
