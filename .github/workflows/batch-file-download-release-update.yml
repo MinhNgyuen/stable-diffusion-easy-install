@@ -9,13 +9,14 @@ jobs:
   update-release:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Update Release Asset
-      uses: svenstaro/upload-release-action@v2
-      with:
-        file: stable-diffusion-web-ui.bat
-        asset_name: stable-diffusion-web-ui.bat
-        tag: latest
-        overwrite: true
+      - name: Update Release Asset
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: stable-diffusion-web-ui.bat
+          asset_name: stable-diffusion-web-ui.bat
+          tag: latest
+          overwrite: true
