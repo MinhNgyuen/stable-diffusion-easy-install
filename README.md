@@ -26,4 +26,4 @@ Stable Diffusion Web UI will be installed to the following directory: C:\Users\%
 
 ## Help
 
-If you have any questions or need help, join our Discord server and we'll try to assist you!
+If you have any questions or need help, [join our Discord server](https://discord.gg/JVnxEtcWXB) and we'll try to assist you!
